@@ -1,2 +1,6 @@
 # Ignore app.config file
 ClubDeportivoWinForms/app.config
+
+# Ignore bin and obj directories
+bin/
+obj/
