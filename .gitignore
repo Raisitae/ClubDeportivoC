@@ -2,5 +2,5 @@
 ClubDeportivoWinForms/app.config
 
 # Ignore bin and obj directories
-bin/
-obj/
+ClubDeportivoWinForms/bin/
+ClubDeportivoWinForms/obj/
