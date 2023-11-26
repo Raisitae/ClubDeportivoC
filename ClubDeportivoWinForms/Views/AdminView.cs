@@ -2,13 +2,14 @@
 
 namespace ClubDeportivoWinForms
 {
-    public partial class AdminView : Form
+    public partial class AdminView : GradientBackgroundCustom
     {
+
         public AdminView()
         {
             InitializeComponent();
+            
         }
-
         private void listPrueba_click(object sender, EventArgs e)
         {
             Form formUsers = new userList();

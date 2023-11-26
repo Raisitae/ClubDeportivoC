@@ -1,16 +1,26 @@
+using ClubDeportivoWinForms.Views;
 using System.Data;
-
+using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace ClubDeportivoWinForms
 {
-    public partial class LoginView : Form
+    public partial class LoginView : GradientBackgroundCustom
     {
         private int clickPassCount = 0;
-
 
         public LoginView()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
+            button1.FlatAppearance.BorderSize = 0;
+            this.Load += LoginView_Load; // Subscribe to the Load event
+        }
+
+        private void LoginView_Load(object? sender, EventArgs e)
+        {
+            // Set focus to another control, for example, a button
+            // probablemente al placeholder van 
 
         }
 
@@ -58,6 +68,14 @@ namespace ClubDeportivoWinForms
                         formUser.ShowDialog();
                         formUser = null;
                         break;
+
+                    case 122:
+                        // en el caso de que se cree un usuario, en realidad hay que redirigir a la pantalla
+                        // de pago, porque al realizar el registro hay necesariamente que pagar
+                        Form formUser2 = new UserView();
+                        formUser2.ShowDialog();
+                        formUser = null;
+                        break;
                 }
 
                 this.Show();
@@ -80,7 +98,11 @@ namespace ClubDeportivoWinForms
             Form forrmRegister = new RegisterView();
             forrmRegister.ShowDialog();
             forrmRegister = null;
-            this.Show();
+        }
+
+        private void LoginView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

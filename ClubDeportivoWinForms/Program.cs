@@ -14,6 +14,7 @@ namespace ClubDeportivoWinForms
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new LoginView());
+            Application.Exit();
 
 
 

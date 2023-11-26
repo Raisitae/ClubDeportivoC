@@ -31,80 +31,93 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             label1 = new Label();
             label_welcome = new Label();
             label2 = new Label();
             textBox_usuario = new TextBox();
             textBox_pass = new TextBox();
             panel2 = new Panel();
-            button1 = new Button();
-            panel3 = new Panel();
             label3 = new Label();
+            button1 = new Button();
             label4 = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.MediumAquamarine;
+            panel1.BackColor = Color.FromArgb(13, 13, 13);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label_welcome);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(421, 451);
+            panel1.Size = new Size(421, 753);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.Image = Properties.Resources.team;
+            pictureBox1.Location = new Point(111, 199);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(194, 227);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.BackColor = Color.MediumAquamarine;
-            label1.Font = new Font("Lucida Sans Unicode", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(32, 220);
+            label1.Location = new Point(40, 479);
             label1.Name = "label1";
-            label1.Size = new Size(317, 42);
+            label1.Size = new Size(337, 37);
             label1.TabIndex = 1;
-            label1.Text = "del club deportivo";
+            label1.Text = "DEL CLUB SUPERNOVA";
             // 
             // label_welcome
             // 
             label_welcome.Anchor = AnchorStyles.None;
             label_welcome.AutoSize = true;
-            label_welcome.Font = new Font("Lucida Sans Unicode", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label_welcome.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
             label_welcome.ForeColor = SystemColors.Control;
-            label_welcome.Location = new Point(32, 172);
+            label_welcome.Location = new Point(27, 440);
             label_welcome.Name = "label_welcome";
-            label_welcome.Size = new Size(359, 42);
+            label_welcome.Size = new Size(372, 37);
             label_welcome.TabIndex = 0;
-            label_welcome.Text = "Bienvenido al acceso";
+            label_welcome.Text = "BIENVENIDO AL ACCESO";
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Font = new Font("Lucida Sans Unicode", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.GrayText;
-            label2.Location = new Point(526, 91);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.Control;
+            label2.Location = new Point(717, 243);
             label2.Name = "label2";
-            label2.Size = new Size(179, 34);
+            label2.Size = new Size(262, 40);
             label2.TabIndex = 2;
-            label2.Text = "Inicie sesion";
+            label2.Text = "INICIAR SESIÓN";
             // 
             // textBox_usuario
             // 
             textBox_usuario.Anchor = AnchorStyles.None;
             textBox_usuario.BackColor = Color.FromArgb(224, 224, 224);
             textBox_usuario.BorderStyle = BorderStyle.None;
-            textBox_usuario.Font = new Font("Lucida Sans Unicode", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox_usuario.Font = new Font("Century Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
             textBox_usuario.ForeColor = SystemColors.ControlDarkDark;
-            textBox_usuario.Location = new Point(450, 17);
+            textBox_usuario.Location = new Point(641, 17);
             textBox_usuario.Name = "textBox_usuario";
-            textBox_usuario.PlaceholderText = "Usuario";
-            textBox_usuario.Size = new Size(307, 36);
+            textBox_usuario.PlaceholderText = "USUARIO";
+            textBox_usuario.Size = new Size(307, 31);
             textBox_usuario.TabIndex = 3;
             // 
             // textBox_pass
@@ -112,12 +125,12 @@
             textBox_pass.Anchor = AnchorStyles.None;
             textBox_pass.BackColor = Color.FromArgb(224, 224, 224);
             textBox_pass.BorderStyle = BorderStyle.None;
-            textBox_pass.Font = new Font("Lucida Sans Unicode", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox_pass.Font = new Font("Century Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
             textBox_pass.ForeColor = SystemColors.ControlDarkDark;
-            textBox_pass.Location = new Point(450, 61);
+            textBox_pass.Location = new Point(641, 61);
             textBox_pass.Name = "textBox_pass";
-            textBox_pass.PlaceholderText = "Contraseña";
-            textBox_pass.Size = new Size(307, 36);
+            textBox_pass.PlaceholderText = "CONTRASEÑA";
+            textBox_pass.Size = new Size(307, 31);
             textBox_pass.TabIndex = 4;
             textBox_pass.Click += textBox_pass_Click;
             textBox_pass.Enter += textBox_pass_Enter;
@@ -129,60 +142,53 @@
             panel2.BackColor = Color.FromArgb(224, 224, 224);
             panel2.Controls.Add(textBox_usuario);
             panel2.Controls.Add(textBox_pass);
-            panel2.Location = new Point(3, 159);
+            panel2.Location = new Point(3, 309);
             panel2.Name = "panel2";
-            panel2.Size = new Size(797, 121);
+            panel2.Size = new Size(1179, 121);
             panel2.TabIndex = 5;
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.None;
-            button1.BackColor = Color.MediumAquamarine;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(105, 305);
-            button1.Name = "button1";
-            button1.Size = new Size(170, 55);
-            button1.TabIndex = 6;
-            button1.Text = "Ingresar";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(label4);
-            panel3.Controls.Add(button1);
-            panel3.Controls.Add(label3);
-            panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(421, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(379, 451);
-            panel3.TabIndex = 7;
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Font = new Font("Lucida Sans Unicode", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.GrayText;
-            label3.Location = new Point(67, 375);
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Century Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.Control;
+            label3.Location = new Point(654, 597);
             label3.Name = "label3";
-            label3.Size = new Size(241, 23);
+            label3.Size = new Size(374, 31);
             label3.TabIndex = 8;
-            label3.Text = "No tenes cuenta creada?";
+            label3.Text = "¿NO TENES CUENTA CREADA?";
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.MediumSlateBlue;
+            button1.Cursor = Cursors.Hand;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Century Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.Control;
+            button1.Location = new Point(749, 511);
+            button1.Name = "button1";
+            button1.Size = new Size(202, 55);
+            button1.TabIndex = 6;
+            button1.Text = "INGRESAR";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label4
             // 
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
-            label4.Font = new Font("Lucida Sans Unicode", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.MediumAquamarine;
-            label4.Location = new Point(54, 398);
+            label4.BackColor = Color.Transparent;
+            label4.Cursor = Cursors.Hand;
+            label4.Font = new Font("Century Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.MediumSlateBlue;
+            label4.Location = new Point(645, 629);
             label4.Name = "label4";
-            label4.Size = new Size(285, 23);
+            label4.Size = new Size(395, 31);
             label4.TabIndex = 9;
-            label4.Text = "Hace click acá y registrate";
+            label4.Text = "HACE CLICK ACÁ Y REGISTRATE";
             label4.Click += label4_Click;
             // 
             // LoginView
@@ -190,21 +196,25 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(800, 451);
+            ClientSize = new Size(1182, 753);
+            Controls.Add(label4);
+            Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(panel1);
+            Controls.Add(label3);
             Controls.Add(panel2);
-            Controls.Add(panel3);
             ForeColor = SystemColors.Desktop;
             FormBorderStyle = FormBorderStyle.SizableToolWindow;
             Name = "LoginView";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            FormClosing += LoginView_FormClosing;
+            Load += LoginView_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -219,9 +229,9 @@
         private TextBox textBox_usuario;
         private TextBox textBox_pass;
         private Panel panel2;
-        private Button button1;
-        private Panel panel3;
-        private Label label4;
         private Label label3;
+        private Button button1;
+        private Label label4;
+        private PictureBox pictureBox1;
     }
 }

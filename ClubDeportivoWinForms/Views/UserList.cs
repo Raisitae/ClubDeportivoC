@@ -16,7 +16,7 @@ namespace ClubDeportivoWinForms.Views
         {
             InitializeComponent();
             DataTable tablaSocios = new DataTable();
-            Data.Socios dato = new Data.Socios(); // variable que contiene todas las caracteristicas de la clase
+            Data.Personas dato = new Data.Personas(); // variable que contiene todas las caracteristicas de la clase
             tablaSocios = dato.All_socios();
             dataGridView1.DataSource = tablaSocios;
 

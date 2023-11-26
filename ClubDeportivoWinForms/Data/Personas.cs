@@ -3,7 +3,7 @@ using System.Data;
 
 namespace ClubDeportivoWinForms.Data
 {
-    internal class Socios
+    internal class Personas
     {
         // creamos un metodo que retorne una tabla con la informacion
         public DataTable All_socios()
@@ -14,17 +14,21 @@ namespace ClubDeportivoWinForms.Data
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
+
+                // el comando es un elemento que almacena en este caso el nombre
+                // del procedimiento almacenado y la referencia a la conexion
+
                 MySqlCommand comando = new MySqlCommand
-                ("socio", sqlCon);
+                ("FetchSocios", sqlCon);
+                comando.CommandType = CommandType.StoredProcedure;
 
-                //TableDirect nos permite traer toda la tabla socio
-                comando.CommandType = CommandType.TableDirect;
-
+                // abrimos la conexion
                 sqlCon.Open();
-                resultado = comando.ExecuteReader();
-                tabla.Load(resultado);
+                resultado = comando.ExecuteReader(); // almacenamos el resultado en la variable
+                tabla.Load(resultado); // cargamos la tabla con el resultado
                 return tabla;
             }
+
             catch (Exception ex)
             {
                 throw;
@@ -36,7 +40,7 @@ namespace ClubDeportivoWinForms.Data
             }
         }
 
-        public DataTable CreateSocio(string N_socio, long Num_socio, int D_socio)
+        public DataTable CreatePersona(string N_socio, long Num_socio, int D_socio, int R_rol)
         {
             MySqlDataReader resultado;
             DataTable tabla = new DataTable();
@@ -46,7 +50,7 @@ namespace ClubDeportivoWinForms.Data
                 sqlCon = Conexion.getInstancia().CrearConexion();
 
                 MySqlCommand comando = new MySqlCommand
-                ("addSocio", sqlCon);
+                ("addPersona", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
 
                 //en este caso estamos usando un StoreProcedure porque queremos hacer varias cosas:
@@ -60,6 +64,17 @@ namespace ClubDeportivoWinForms.Data
                 Num_socio;
                 comando.Parameters.Add("thisdni", MySqlDbType.Int64).Value =
                 D_socio;
+                if (R_rol == 121)
+                {
+                    comando.Parameters.Add("rol", MySqlDbType.Int64).Value = true;
+                    comando.Parameters.Add("rolINT", MySqlDbType.Int64).Value = R_rol;
+                }
+                else if (R_rol == 122)
+                {
+                    comando.Parameters.Add("rol", MySqlDbType.Int64).Value = false;
+                    comando.Parameters.Add("rolINT", MySqlDbType.Int64).Value = R_rol;
+                }
+
 
                 sqlCon.Open();
                 resultado = comando.ExecuteReader(); // almacenamos el resultado en la variable

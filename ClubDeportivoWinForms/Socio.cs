@@ -19,11 +19,12 @@ namespace ClubDeportivoWinForms
         public int? Id_socio { get => id_socio; set => id_socio = value; }
 
         public bool registrarSocio(string nombre, long telefono, int dni){
+
             //implementamos el registro del socio en la base de datos
 
             DataTable tablaCreate = new DataTable(); 
-            Data.Socios dato = new Data.Socios();
-            tablaCreate = dato.CreateSocio(nombre, telefono, dni);
+            Data.Personas dato = new Data.Personas();
+            tablaCreate = dato.CreatePersona(nombre, telefono, dni, 121);
 
             //aqui traemos desde la base de datos el id generado por Mysql y lo seteamos como el id del socio
             if (tablaCreate.Rows[0][0].ToString() != null || tablaCreate.Rows[0][0].ToString() != string.Empty)
@@ -31,13 +32,6 @@ namespace ClubDeportivoWinForms
                 id_socio = int.Parse(tablaCreate.Rows[0][0].ToString());
             }
 
-            return true;
-
-
-        }
-        public bool desafiliarSocio()
-        {
-            // borrarlo de la DATABASE
             return true;
         }
         public bool generarCarnet()
