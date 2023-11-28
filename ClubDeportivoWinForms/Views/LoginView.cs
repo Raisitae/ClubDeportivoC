@@ -45,6 +45,8 @@ namespace ClubDeportivoWinForms
             {
                 // quiere decir que el resultado tiene 1 fila por lo que el usuario EXISTE
                 int userRol = int.Parse(s: tablaLogin.Rows[0][1].ToString());
+                int id = int.Parse(s: tablaLogin.Rows[0][2].ToString());
+
 
                 this.Hide();
 
@@ -62,18 +64,15 @@ namespace ClubDeportivoWinForms
                         break;
 
                     case 121:
-                        // en el caso de que se cree un usuario, en realidad hay que redirigir a la pantalla
-                        // de pago, porque al realizar el registro hay necesariamente que pagar
-                        Form formUser = new UserView();
-                        formUser.ShowDialog();
-                        formUser = null;
-                        break;
-
                     case 122:
-                        // en el caso de que se cree un usuario, en realidad hay que redirigir a la pantalla
-                        // de pago, porque al realizar el registro hay necesariamente que pagar
-                        Form formUser2 = new UserView();
-                        formUser2.ShowDialog();
+                        Form formUser = new UserView();
+                        using (formUser)
+                        {
+                            if (formUser.ShowDialog() == DialogResult.OK)
+                            {
+                                id = ((UserView)formUser).IdPersona;
+                            }
+                        }
                         formUser = null;
                         break;
                 }

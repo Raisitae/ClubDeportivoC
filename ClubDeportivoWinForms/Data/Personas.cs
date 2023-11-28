@@ -28,7 +28,6 @@ namespace ClubDeportivoWinForms.Data
                 tabla.Load(resultado); // cargamos la tabla con el resultado
                 return tabla;
             }
-
             catch (Exception ex)
             {
                 throw;
@@ -74,7 +73,6 @@ namespace ClubDeportivoWinForms.Data
                     comando.Parameters.Add("rol", MySqlDbType.Int64).Value = false;
                     comando.Parameters.Add("rolINT", MySqlDbType.Int64).Value = R_rol;
                 }
-
 
                 sqlCon.Open();
                 resultado = comando.ExecuteReader(); // almacenamos el resultado en la variable

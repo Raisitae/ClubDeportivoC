@@ -17,6 +17,16 @@ namespace ClubDeportivoWinForms
             InitializeComponent();
         }
 
+        // Private field to store the idPersona value
+        private int _idPersona;
+
+        // Public property to access _idPersona
+        public int IdPersona
+        {
+            get { return _idPersona; }
+            set { _idPersona = value; }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();

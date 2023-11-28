@@ -4,7 +4,6 @@ using System.Configuration;
 
 namespace ClubDeportivoWinForms.Data
 {
-   
     public class Conexion
     {
         private string baseDatos;
@@ -14,9 +13,7 @@ namespace ClubDeportivoWinForms.Data
         private string clave;
         private static Conexion? con = null;
 
-
-        NameValueCollection appSettings = ConfigurationManager.AppSettings;
-
+        private NameValueCollection appSettings = ConfigurationManager.AppSettings;
 
         private Conexion() // asignamos valores a las variables de la conexion
         {
