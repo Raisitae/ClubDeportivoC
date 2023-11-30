@@ -100,5 +100,37 @@ namespace ClubDeportivoWinForms.Data
                 { sqlCon.Close(); };
             }
         }
+
+        public DataTable PayActividad(long costo, int dni)
+        {
+            MySqlDataReader resultado; // variable de tipo datareaderde
+            DataTable tabla = new DataTable();
+            MySqlConnection sqlCon = new MySqlConnection();
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                MySqlCommand comando = new MySqlCommand
+                ("FetchVencimientosDiarios", sqlCon);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add("dni", MySqlDbType.Int64).Value =
+                dni;
+
+                sqlCon.Open();
+                resultado = comando.ExecuteReader();
+                tabla.Load(resultado);
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open)
+                { sqlCon.Close(); };
+            }
+        }
+
+
     }
 }

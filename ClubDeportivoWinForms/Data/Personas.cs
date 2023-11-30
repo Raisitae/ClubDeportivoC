@@ -124,5 +124,41 @@ namespace ClubDeportivoWinForms.Data
                 { sqlCon.Close(); };
             }
         }
+
+        public DataTable bringCarnet(int dni)
+        {
+            MySqlDataReader resultado;
+            DataTable tabla = new DataTable();
+            MySqlConnection sqlCon = new MySqlConnection();
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+
+                MySqlCommand comando = new MySqlCommand
+                ("checkSocio", sqlCon);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                //El store procedure es simple, quizas podria resumirse a un CommandType.Text
+                //Pero son mas susceptibles a query injections;
+
+                comando.Parameters.Add("thisdni", MySqlDbType.Int64).Value =
+                dni;
+
+                sqlCon.Open();
+                resultado = comando.ExecuteReader();
+                tabla.Load(resultado);
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open)
+                { sqlCon.Close(); };
+            }
+
+        }
     }
 }
