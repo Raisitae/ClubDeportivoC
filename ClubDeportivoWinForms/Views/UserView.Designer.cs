@@ -72,7 +72,7 @@
             lbl_usuario.Cursor = Cursors.Hand;
             lbl_usuario.Font = new Font("Century Gothic", 25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_usuario.ForeColor = Color.MediumSlateBlue;
-            lbl_usuario.Location = new Point(323, 75);
+            lbl_usuario.Location = new Point(314, 75);
             lbl_usuario.Name = "lbl_usuario";
             lbl_usuario.Size = new Size(201, 51);
             lbl_usuario.TabIndex = 10;
@@ -96,7 +96,7 @@
             label_welcome.AutoSize = true;
             label_welcome.Font = new Font("Century Gothic", 25F, FontStyle.Regular, GraphicsUnit.Point);
             label_welcome.ForeColor = SystemColors.Control;
-            label_welcome.Location = new Point(60, 75);
+            label_welcome.Location = new Point(59, 75);
             label_welcome.Name = "label_welcome";
             label_welcome.Size = new Size(273, 51);
             label_welcome.TabIndex = 0;
@@ -287,7 +287,7 @@
             panel2.Controls.Add(radioButton3);
             panel2.Controls.Add(radioButton1);
             panel2.Controls.Add(radioButton2);
-            panel2.Location = new Point(58, 514);
+            panel2.Location = new Point(58, 515);
             panel2.Name = "panel2";
             panel2.Size = new Size(304, 141);
             panel2.TabIndex = 21;
@@ -297,7 +297,7 @@
             radioButton_Act.AutoSize = true;
             radioButton_Act.Font = new Font("Century Gothic", 20F, FontStyle.Regular, GraphicsUnit.Point);
             radioButton_Act.ForeColor = SystemColors.ControlLightLight;
-            radioButton_Act.Location = new Point(4, 99);
+            radioButton_Act.Location = new Point(5, 99);
             radioButton_Act.Name = "radioButton_Act";
             radioButton_Act.Size = new Size(292, 44);
             radioButton_Act.TabIndex = 3;

@@ -24,6 +24,7 @@ namespace ClubDeportivoWinForms.Data
                 // definimos los parametros que tiene el procedure
                 comando.Parameters.Add("Usu",
                 MySqlDbType.VarChar).Value = L_Usu;
+
                 comando.Parameters.Add("Pass", MySqlDbType.Int64).Value =
                 P_Usu;
                 // abrimos la conexion

@@ -17,6 +17,10 @@ namespace ClubDeportivoWinForms
         public UserView(int idPersona, int rol)
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
+            button1.FlatAppearance.BorderSize = 0;
+            btn_pago.FlatAppearance.BorderSize = 0;
+            
             IdPersona = idPersona; // Set the received IdPersona value
             Rol = rol;
             fetchCarnet();
@@ -76,14 +80,16 @@ namespace ClubDeportivoWinForms
 
             DateTime currentDateTime = DateTime.Now;
 
-            if (Fecha_vencimiento > currentDateTime) {
+            if (Fecha_vencimiento > currentDateTime)
+            {
                 btn_pago.Visible = false;
                 panel2.Visible = false;
-            } else
+            }
+            else
             {
                 btn_pago.Visible = true;
                 panel2.Visible = true;
-                    
+
             }
         }
         private void fetchCarnet()
@@ -124,7 +130,7 @@ namespace ClubDeportivoWinForms
                 }
                 else
                 {
-                   
+
                     parseFechaUltimoPago = DateTime.MinValue;
                 }
             }
@@ -151,7 +157,7 @@ namespace ClubDeportivoWinForms
                     break;
 
                 case false:
-                    if (Fecha_vencimiento.Date < currentDateTime.Date) 
+                    if (Fecha_vencimiento.Date < currentDateTime.Date)
                     {
                         lbl_socio.Text = "NO SOCIO. NO HAY ACTIVIDAD PAGADA";
                     }
@@ -165,7 +171,7 @@ namespace ClubDeportivoWinForms
             if (!string.IsNullOrEmpty(fetchUser.Rows[0][4].ToString()))
             {
                 //this could be in cuota
-                
+
                 lbl_ultimopago.Text = parseFechaUltimoPago.ToString();
             }
             else
@@ -195,13 +201,14 @@ namespace ClubDeportivoWinForms
             DateTime currentDateTime = DateTime.Now;
 
             if (Rol == 121)
-            {      
+            {
                 admin.crearCouta(1000, intervalo, IdPersona);
                 fetchCarnet();
                 renderPayment();
                 this.Refresh();
             }
-            else if (Rol == 122) {
+            else if (Rol == 122)
+            {
                 admin.crearActividad(100, IdPersona);
                 fetchCarnet();
                 renderPayment();

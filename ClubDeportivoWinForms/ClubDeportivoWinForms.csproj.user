@@ -4,12 +4,6 @@
     <Compile Update="Views\AdminView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\CarnetView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Views\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Views\GradientBackgroundCustom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -20,9 +14,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\RegisterView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Views\UserList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\UserView.cs">
