@@ -19,8 +19,7 @@ namespace ClubDeportivoWinForms
 
         public bool registrarNoSocio(string nombre, long telefono, int dni)
         {
-            //implementamos el registro del socio en la base de datos
-
+            //implementamos el registro del no socio en la base de datos
             DataTable tablaCreate = new DataTable();
             Data.Personas dato = new Data.Personas();
             tablaCreate = dato.CreatePersona(nombre, telefono, dni, 122);

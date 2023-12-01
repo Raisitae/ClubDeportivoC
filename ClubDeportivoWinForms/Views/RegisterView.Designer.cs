@@ -62,7 +62,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.team;
-            pictureBox1.Location = new Point(108, 220);
+            pictureBox1.Location = new Point(111, 199);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(194, 227);
@@ -76,7 +76,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(37, 498);
+            label1.Location = new Point(40, 479);
             label1.Name = "label1";
             label1.Size = new Size(337, 37);
             label1.TabIndex = 4;
@@ -88,7 +88,7 @@
             label_welcome.AutoSize = true;
             label_welcome.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
             label_welcome.ForeColor = SystemColors.Control;
-            label_welcome.Location = new Point(24, 459);
+            label_welcome.Location = new Point(27, 440);
             label_welcome.Name = "label_welcome";
             label_welcome.Size = new Size(372, 37);
             label_welcome.TabIndex = 3;
@@ -101,7 +101,7 @@
             textBox_Nombre.BorderStyle = BorderStyle.None;
             textBox_Nombre.Font = new Font("Century Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
             textBox_Nombre.ForeColor = SystemColors.ControlDarkDark;
-            textBox_Nombre.Location = new Point(615, 24);
+            textBox_Nombre.Location = new Point(615, 34);
             textBox_Nombre.Name = "textBox_Nombre";
             textBox_Nombre.PlaceholderText = "NOMBRE";
             textBox_Nombre.Size = new Size(361, 31);
@@ -114,7 +114,7 @@
             textBox_DNI.BorderStyle = BorderStyle.None;
             textBox_DNI.Font = new Font("Century Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
             textBox_DNI.ForeColor = SystemColors.ControlDarkDark;
-            textBox_DNI.Location = new Point(615, 66);
+            textBox_DNI.Location = new Point(615, 76);
             textBox_DNI.Name = "textBox_DNI";
             textBox_DNI.PlaceholderText = "DNI";
             textBox_DNI.Size = new Size(361, 31);
@@ -128,7 +128,7 @@
             registrar.FlatStyle = FlatStyle.Flat;
             registrar.Font = new Font("Century Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
             registrar.ForeColor = SystemColors.ButtonHighlight;
-            registrar.Location = new Point(739, 558);
+            registrar.Location = new Point(708, 558);
             registrar.Name = "registrar";
             registrar.Size = new Size(202, 55);
             registrar.TabIndex = 10;
@@ -145,7 +145,7 @@
             panel2.Controls.Add(textBox_Telefono);
             panel2.Controls.Add(textBox_Nombre);
             panel2.Controls.Add(textBox_DNI);
-            panel2.Location = new Point(3, 294);
+            panel2.Location = new Point(3, 304);
             panel2.Name = "panel2";
             panel2.Size = new Size(1179, 211);
             panel2.TabIndex = 9;
@@ -155,7 +155,7 @@
             checkBox1.AutoSize = true;
             checkBox1.Font = new Font("Century Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox1.ForeColor = SystemColors.ControlDarkDark;
-            checkBox1.Location = new Point(615, 147);
+            checkBox1.Location = new Point(615, 157);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(266, 35);
             checkBox1.TabIndex = 14;
@@ -169,7 +169,7 @@
             textBox_Telefono.BorderStyle = BorderStyle.None;
             textBox_Telefono.Font = new Font("Century Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
             textBox_Telefono.ForeColor = SystemColors.ControlDarkDark;
-            textBox_Telefono.Location = new Point(615, 108);
+            textBox_Telefono.Location = new Point(615, 118);
             textBox_Telefono.Name = "textBox_Telefono";
             textBox_Telefono.PlaceholderText = "TELÉFONO";
             textBox_Telefono.Size = new Size(361, 31);
@@ -182,7 +182,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(717, 227);
+            label3.Location = new Point(689, 227);
             label3.Name = "label3";
             label3.Size = new Size(224, 40);
             label3.TabIndex = 11;
@@ -196,7 +196,7 @@
             label4.Cursor = Cursors.Hand;
             label4.Font = new Font("Century Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.MediumSlateBlue;
-            label4.Location = new Point(636, 671);
+            label4.Location = new Point(611, 671);
             label4.Name = "label4";
             label4.Size = new Size(420, 31);
             label4.TabIndex = 13;
@@ -210,7 +210,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Century Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(627, 640);
+            label2.Location = new Point(613, 640);
             label2.Name = "label2";
             label2.Size = new Size(429, 31);
             label2.TabIndex = 12;
@@ -229,7 +229,7 @@
             Controls.Add(panel2);
             Name = "RegisterView";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "RegisterView";
+            Text = "Club Supernova";
             FormClosing += RegisterView_FormClosing;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

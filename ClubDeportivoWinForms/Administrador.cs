@@ -25,7 +25,6 @@ namespace ClubDeportivoWinForms
         public bool crearSocio(int? id_socio, string name, long num_Telefono, int dni)
         {
 
-
             DataTable tablaCheck = new DataTable();
             Data.Personas dato = new Data.Personas();
             tablaCheck = dato.CheckSocio(dni);
@@ -40,7 +39,6 @@ namespace ClubDeportivoWinForms
             {
                 MessageBox.Show("El socio ya se encuentra en nuestra base de datos");
             }
-
             return true;
 
         }
@@ -61,21 +59,24 @@ namespace ClubDeportivoWinForms
             {
                 MessageBox.Show("El no socio ya se encuentra en nuestra base de datos");
             }
-
-            return true;
-
-        }
-
-
-
-        //esto va a ir desde el usuario
-        public bool pagarCuota(int id_pago, DateTime fecha_pago, bool vencido, int costo, bool mensual)
-        {
-            Cuota cuota = new Cuota(id_pago, DateTime.Now, vencido, costo, mensual);
-
-            //aca hariamos cuota.pagarCuota() y lo mandamos a la database
             return true;
         }
+        public void crearCouta(int costo, int intervalo, int id) {
+            DateTime currentDateTime = DateTime.Now;
+
+            Cuota cuota = new Cuota(null, currentDateTime, currentDateTime.AddMonths(intervalo), costo * intervalo, intervalo, id);
+            cuota.efectuarPago(intervalo, costo * intervalo, id);
+            MessageBox.Show("Pago efectuado!");
+        }
+
+        public void crearActividad(int costo, int id)
+        {   DateTime currentDateTime = DateTime.Now;
+
+            Actividad actividad = new Actividad(null, currentDateTime, currentDateTime.AddDays(1), costo, id);
+            actividad.efectuarPago(costo, id);
+            MessageBox.Show("Pago efectuado!");
+        }
+
 
 
     }

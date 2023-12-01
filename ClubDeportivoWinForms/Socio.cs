@@ -11,7 +11,6 @@ namespace ClubDeportivoWinForms
     {
 
         private int? id_socio;
-
         public Socio(int? id_socio, string name, long num_Telefono, int dni) : base(name, num_Telefono, dni)
         {
             this.id_socio = id_socio;
@@ -21,7 +20,6 @@ namespace ClubDeportivoWinForms
         public bool registrarSocio(string nombre, long telefono, int dni){
 
             //implementamos el registro del socio en la base de datos
-
             DataTable tablaCreate = new DataTable(); 
             Data.Personas dato = new Data.Personas();
             tablaCreate = dato.CreatePersona(nombre, telefono, dni, 121);
@@ -31,17 +29,6 @@ namespace ClubDeportivoWinForms
             {
                 id_socio = int.Parse(tablaCreate.Rows[0][0].ToString());
             }
-
-            return true;
-        }
-        public bool generarCarnet()
-        {
-
-            return true;
-        }
-        public bool printVencimiento()
-        {
-
             return true;
         }
 

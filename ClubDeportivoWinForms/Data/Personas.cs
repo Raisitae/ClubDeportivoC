@@ -125,7 +125,7 @@ namespace ClubDeportivoWinForms.Data
             }
         }
 
-        public DataTable bringCarnet(int dni)
+        public DataTable bringCarnet(int idP)
         {
             MySqlDataReader resultado;
             DataTable tabla = new DataTable();
@@ -135,14 +135,14 @@ namespace ClubDeportivoWinForms.Data
                 sqlCon = Conexion.getInstancia().CrearConexion();
 
                 MySqlCommand comando = new MySqlCommand
-                ("checkSocio", sqlCon);
+                ("bringCarnet", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
 
                 //El store procedure es simple, quizas podria resumirse a un CommandType.Text
                 //Pero son mas susceptibles a query injections;
 
-                comando.Parameters.Add("thisdni", MySqlDbType.Int64).Value =
-                dni;
+                comando.Parameters.Add("idPers", MySqlDbType.Int64).Value =
+                idP;
 
                 sqlCon.Open();
                 resultado = comando.ExecuteReader();
@@ -158,7 +158,6 @@ namespace ClubDeportivoWinForms.Data
                 if (sqlCon.State == ConnectionState.Open)
                 { sqlCon.Close(); };
             }
-
         }
     }
 }

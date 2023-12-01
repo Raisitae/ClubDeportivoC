@@ -42,7 +42,7 @@ namespace ClubDeportivoWinForms
                 else if (!checkBox1.Checked)
                 {
                     admin.crearNoSocio(null, name, tel, dni);
-                 //aca creamos el no socio
+                    //aca creamos el no socio
                 }
 
                 textBox_DNI.Text = string.Empty;
@@ -55,7 +55,8 @@ namespace ClubDeportivoWinForms
                 formLogin.ShowDialog();
                 formLogin = null;
 
-            } else
+            }
+            else
             {
                 MessageBox.Show("Hay un error con alguno de los valores ingresados, recordá que todos los campos son obligatorios y que el dni debe ser ingresado sin puntos");
             }

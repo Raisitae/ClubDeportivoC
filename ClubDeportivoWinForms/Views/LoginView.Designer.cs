@@ -207,7 +207,7 @@
             FormBorderStyle = FormBorderStyle.SizableToolWindow;
             Name = "LoginView";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Club Supernova";
             FormClosing += LoginView_FormClosing;
             Load += LoginView_Load;
             panel1.ResumeLayout(false);

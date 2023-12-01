@@ -65,14 +65,8 @@ namespace ClubDeportivoWinForms
 
                     case 121:
                     case 122:
-                        Form formUser = new UserView();
-                        using (formUser)
-                        {
-                            if (formUser.ShowDialog() == DialogResult.OK)
-                            {
-                                id = ((UserView)formUser).IdPersona;
-                            }
-                        }
+                        Form formUser = new UserView(id, userRol);
+                        formUser.ShowDialog();
                         formUser = null;
                         break;
                 }

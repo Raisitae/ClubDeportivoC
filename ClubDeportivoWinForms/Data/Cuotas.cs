@@ -5,7 +5,7 @@ namespace ClubDeportivoWinForms.Data
 {
     internal class Cuotas
     {
-        public DataTable PayCuota(int I_intervalPago, long costo, bool mensual,int id)
+        public DataTable PayCuota(int I_intervalPago, long costo, bool mensual, int id)
         {
             MySqlDataReader resultado; // variable de tipo datareaderde
             DataTable tabla = new DataTable();
@@ -21,14 +21,12 @@ namespace ClubDeportivoWinForms.Data
                 MySqlDbType.VarChar).Value = I_intervalPago;
                 comando.Parameters.Add("thiscosto", MySqlDbType.Int64).Value =
                 costo;
-                comando.Parameters.Add("thismensual", MySqlDbType.Int64).Value =
-                mensual;
                 comando.Parameters.Add("thisid", MySqlDbType.Int64).Value =
                 id;
 
                 sqlCon.Open();
-                resultado = comando.ExecuteReader(); 
-                tabla.Load(resultado); 
+                resultado = comando.ExecuteReader();
+                tabla.Load(resultado);
                 return tabla;
             }
             catch (Exception ex)
@@ -51,10 +49,10 @@ namespace ClubDeportivoWinForms.Data
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
                 MySqlCommand comando = new MySqlCommand
-                ("PayCuota", sqlCon);
+                ("FetchUltimoPago", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
 
-                comando.Parameters.Add("dni", MySqlDbType.Int64).Value =
+                comando.Parameters.Add("idPers", MySqlDbType.Int64).Value =
                 thisid;
 
                 sqlCon.Open();
@@ -110,9 +108,11 @@ namespace ClubDeportivoWinForms.Data
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
                 MySqlCommand comando = new MySqlCommand
-                ("FetchVencimientosDiarios", sqlCon);
+                ("PayActividad", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.Add("dni", MySqlDbType.Int64).Value =
+                comando.Parameters.Add("thiscosto", MySqlDbType.Int64).Value =
+                costo;
+                comando.Parameters.Add("thisid", MySqlDbType.Int64).Value =
                 dni;
 
                 sqlCon.Open();
@@ -130,7 +130,5 @@ namespace ClubDeportivoWinForms.Data
                 { sqlCon.Close(); };
             }
         }
-
-
     }
 }
