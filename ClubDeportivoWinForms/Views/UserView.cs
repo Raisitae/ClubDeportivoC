@@ -20,7 +20,7 @@ namespace ClubDeportivoWinForms
             this.DoubleBuffered = true;
             button1.FlatAppearance.BorderSize = 0;
             btn_pago.FlatAppearance.BorderSize = 0;
-            
+
             IdPersona = idPersona; // Set the received IdPersona value
             Rol = rol;
             fetchCarnet();

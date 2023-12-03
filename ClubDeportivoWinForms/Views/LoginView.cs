@@ -36,7 +36,7 @@ namespace ClubDeportivoWinForms
                 int pass = int.Parse(textBox_pass.Text);
                 string name = textBox_usuario.Text;
 
-                
+
 
                 DataTable tablaLogin = new DataTable(); // es la que recibe los datos desde el formulario
                 Data.Users dato = new Data.Users(); // variable que contiene todas las caracteristicas de la clase

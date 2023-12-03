@@ -15,25 +15,52 @@ namespace ClubDeportivoWinForms.Data
 
         private NameValueCollection appSettings = ConfigurationManager.AppSettings;
 
-        private Conexion() // asignamos valores a las variables de la conexion
+        private Conexion()
         {
-            this.baseDatos = ConfigurationManager.AppSettings["baseDatos"];
-            this.servidor = ConfigurationManager.AppSettings["servidor"];
-            this.puerto = ConfigurationManager.AppSettings["puerto"];
-            this.usuario = ConfigurationManager.AppSettings["usuario"];
-            this.clave = ConfigurationManager.AppSettings["clave"];
-            //Hay un archivo app.config que tiene git ignore
-            //cuando ejecuten el programa poner acá los valores
-            //correspondientes a su base de datos :)
-        }
+            bool correcto = false;
+            int mensaje;
 
-        // proceso de interacción
+            string T_servidor = "Servidor";
+            string T_puerto = "Puerto";
+            string T_usuario = "Usuario";
+            string T_clave = "Clave";
+            while (correcto != true)
+            {
+                // Armamos los cuadros de dialogo para el ingreso de datos
+                T_servidor = Microsoft.VisualBasic.Interaction.InputBox
+                ("ingrese servidor", "DATOS DE INSTALACIÓN MySQL");
+                T_puerto = Microsoft.VisualBasic.Interaction.InputBox
+                ("ingrese puerto", "DATOS DE INSTALACIÓN MySQL");
+                T_usuario = Microsoft.VisualBasic.Interaction.InputBox
+                ("ingrese usuario", "DATOS DE INSTALACIÓN MySQL");
+                T_clave = Microsoft.VisualBasic.Interaction.InputBox
+                ("ingrese clave", "DATOS DE INSTALACIÓN MySQL");
+
+                mensaje = (int)MessageBox.Show("su ingreso: SERVIDOR = " +
+                T_servidor + " PUERTO= " + T_puerto + " USUARIO: " +
+                T_usuario + " CLAVE: " + T_clave,
+                "AVISO DEL SISTEMA", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+                if (mensaje != 6) // el valor 6 corresponde al SI
+                {
+                    MessageBox.Show("INGRESE NUEVAMENTE LOS DATOS");
+                    correcto = false;
+                }
+                else
+                {
+                    correcto = true;
+                }
+            }
+            this.baseDatos = "clubDeportivo";
+            this.servidor = T_servidor; // "localhost";
+            this.puerto = T_puerto; //"3306";
+            this.usuario = T_usuario; // "root";
+            this.clave = T_clave; // "";
+        }
 
         public MySqlConnection CrearConexion()
         {
-            // instanciamos una conexion
             MySqlConnection? cadena = new MySqlConnection();
-            // el bloque try permite controlar errores
             try
             {
                 cadena.ConnectionString = "datasource=" + this.servidor +

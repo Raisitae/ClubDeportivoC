@@ -21,7 +21,6 @@ namespace ClubDeportivoWinForms
             return instance;
         }
 
-
         public bool crearSocio(int? id_socio, string name, long num_Telefono, int dni)
         {
 

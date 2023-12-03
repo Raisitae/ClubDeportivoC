@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminView));
             panel2 = new Panel();
             pictureBox2 = new PictureBox();
             lbl_usuario = new Label();
@@ -156,6 +157,7 @@
             Controls.Add(panel2);
             Controls.Add(buttonVenc);
             Controls.Add(buttonCerrar);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AdminView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminView";

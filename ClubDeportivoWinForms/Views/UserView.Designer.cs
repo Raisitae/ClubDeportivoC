@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserView));
             panel1 = new Panel();
             lbl_usuario = new Label();
             pictureBox1 = new PictureBox();
@@ -72,7 +73,7 @@
             lbl_usuario.Cursor = Cursors.Hand;
             lbl_usuario.Font = new Font("Century Gothic", 25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_usuario.ForeColor = Color.MediumSlateBlue;
-            lbl_usuario.Location = new Point(314, 75);
+            lbl_usuario.Location = new Point(333, 75);
             lbl_usuario.Name = "lbl_usuario";
             lbl_usuario.Size = new Size(201, 51);
             lbl_usuario.TabIndex = 10;
@@ -322,6 +323,7 @@
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "UserView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Club Supernova";

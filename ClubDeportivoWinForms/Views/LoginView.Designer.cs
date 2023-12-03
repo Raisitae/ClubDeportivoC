@@ -30,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginView));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
@@ -204,7 +205,7 @@
             Controls.Add(label3);
             Controls.Add(panel2);
             ForeColor = SystemColors.Desktop;
-            FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "LoginView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Club Supernova";

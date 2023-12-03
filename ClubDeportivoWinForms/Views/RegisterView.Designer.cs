@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterView));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
@@ -227,6 +228,7 @@
             Controls.Add(panel1);
             Controls.Add(registrar);
             Controls.Add(panel2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "RegisterView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Club Supernova";
